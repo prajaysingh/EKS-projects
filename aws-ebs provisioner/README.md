@@ -26,7 +26,7 @@ Exec inside the mongodb pod and run following commands to store value pj in db.
 
 --> exit
 
-Now delte the pod and recreate it again. We would run the following commands to verify the field pj still exists even after deleting the pod
+Now delete the pod and recreate it again. We would run the following commands to verify the field pj still exists even after deleting the pod
 
 --> kubectl exec -it mongodb mongo
 
