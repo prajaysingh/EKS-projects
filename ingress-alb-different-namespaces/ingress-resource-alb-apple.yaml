@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: myfirstingress
+  namespace: apple
+  annotations:
+    alb.ingress.kubernetes.io/group.name: "mysharedingress"
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+    kubernetes.io/ingress.class: alb
+spec:
+  rules:
+    - host: "prajaysilwal.com"
+      http:
+        paths:
+          - path: /apple
+            backend:
+              serviceName: apple-service
+              servicePort: 5678

@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mysecondingress
+  namespace: banana
+  annotations:
+    alb.ingress.kubernetes.io/group.name: "mysharedingress"
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: instance
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/group.order: "10"
+spec:
+  rules:
+    - host: "prajaysilwal.com"
+      http:
+        paths:
+          - path: /banana
+            backend:
+              serviceName: banana-service
+              servicePort: 5678
