@@ -17,3 +17,5 @@ If the above check is valid, we are good to deploy sample application:
 4) kubectl apply -f ingress-nginx-backend-service-banana.yaml (This create banana service and backend pod)
 5) kubectl apply -f ingress-resource-nginx.yaml (This will create ingress resource to expose previous created services. Replace <NLB-DNS-NAME> with your NLB's.
   This ingress performs path based routing).
+  
+  kubectl get ingress -A (check if ingress resource is created)
