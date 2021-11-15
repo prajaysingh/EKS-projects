@@ -8,6 +8,7 @@ Follow Steps 1 and 2 to create a nginx ingress contoller and NLB
 2) k apply -f nginx-ingress.yaml
 
 Check if ingress-nginx-controller pod is running by using kubectl get po -n ingress-nginx.
+
 Check in console if NLB is created
 
 If the above check is valid, we are good to deploy sample application:
