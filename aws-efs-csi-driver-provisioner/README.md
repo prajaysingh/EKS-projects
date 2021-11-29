@@ -25,9 +25,13 @@ The above steps will dynamically provision PV which can be verified using kubect
 
 
 Issue observed:
+
 Unlike using ebs provisioner, to make the settings work, I need to perform following tweaks
-a) Storage class needed to have "directoryPerms" section
-b) In pod manifest, I needed to add command: ["mongod"] as without it, I was getting error from pod logs "chown: changing ownership of '/data/db': Operation not permitted"
+
+a) Storage class needed to have "directoryPerms" section.
+
+b) In pod manifest, I needed to add command: ["mongod"] as without it, I was getting error from pod logs "chown: changing ownership of '/data/db': Operation not permitted".
+
 
 Testing:
 
