@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mongodb
+spec:
+  volumes:
+  - name: mongodb-data           
+    persistentVolumeClaim:
+      claimName: mongodb-pvc-efs
+  containers:
+  - image: mongo
+    name: mongodb
+    command: ["mongod"]
+    volumeMounts:
+    - name: mongodb-data         
+      mountPath: /data/db        
+    ports:
+    - containerPort: 27017
+      protocol: TCP   
+  nodeSelector:
+        kubernetes.io/os: linux
