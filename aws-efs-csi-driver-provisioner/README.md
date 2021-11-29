@@ -11,7 +11,7 @@ First of all we need to finish following steps before using this manifests:
 3) Create an Amazon EFS file system (This step includes creating Security Group; creating an Amazon EFS file system and creating mount targets.)
 
 
-Requirement: Please follow this link and complete steps 1,2,3. (https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html)
+Requirement: Please follow this link and complete steps 1,2,3 as mentioned above. (https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html)
 
 Steps:
 
@@ -22,6 +22,12 @@ Steps:
 The above steps will dynamically provision PV which can be verified using kubectl get pv
 
     kubectl apply -f pod.yaml (This will create mongodb pd which mounts the previously generated pv)
+
+
+Issue observed:
+Unlike using ebs provisioner, to make the settings work, I need to perform following tweaks
+a) Storage class needed to have "directoryPerms" section
+b) In pod manifest, I needed to add command: ["mongod"] as without it, I was getting error from pod logs "chown: changing ownership of '/data/db': Operation not permitted"
 
 Testing:
 
