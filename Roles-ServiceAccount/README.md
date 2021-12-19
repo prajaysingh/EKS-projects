@@ -1,10 +1,10 @@
-create a role service-reader in namespace foo that has permission to read services
+create a role service-reader in namespace foo that has permission to read services.
 k apply -f service-reader.yaml 
 
-create a role binding that associates the role service-reader with service account default in foo namespace
+create a role binding that associates the role service-reader with service account default in foo namespace.
 k apply -f service-reader-role-binding.yaml
 
-Run a sample pod to test the access
+Run a sample pod to test the access.
 kubectl run test --image=luksa/kubectl-proxy -n foo
 Exec into pod
 kubectl exec -it test -n foo sh
