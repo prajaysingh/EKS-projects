@@ -8,7 +8,7 @@ Notes:
 
 2) Check if CSIDriver Object is installed by default
 
-    k get csidriver
+    kubectl get csidriver
     
     NAME              ATTACHREQUIRED   PODINFOONMOUNT   STORAGECAPACITY   TOKENREQUESTS   REQUIRESREPUBLISH   MODES        AGE
     
