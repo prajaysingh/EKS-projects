@@ -9,7 +9,9 @@ Notes:
 2) Check if CSIDriver Object is installed by default
 
     k get csidriver
+    
     NAME              ATTACHREQUIRED   PODINFOONMOUNT   STORAGECAPACITY   TOKENREQUESTS   REQUIRESREPUBLISH   MODES        AGE
+    
     efs.csi.aws.com   false            false            false             <unset>         false               Persistent   78d
 
     If not installed you need to create csi object as mentioned in blog.
