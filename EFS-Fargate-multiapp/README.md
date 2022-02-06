@@ -42,7 +42,7 @@ For this to happen:
          Permissions: 0750
          
    
-2) Apply the manifests that creates storage-class,pvc,pv,pod for 2 different applications. Replace {filesystem id} and {access point} id with your values in Persistent volume section.
+2) Apply the manifests that creates storage-class,pvc,pv,pod for 2 different applications. Replace {filesystem id} and {access point id} with your values in Persistent volume section.
    
         kubectl apply -f App1.yml
         
