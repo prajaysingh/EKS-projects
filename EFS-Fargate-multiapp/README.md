@@ -54,11 +54,11 @@ For this to happen:
         ls -la /data/
    
    
- 4) You can also mount the EFS to your EC2 instance to do some testing using following command. This will mount EFS to directory ~/efs-mount-point in your Ec2 i       instance. Replace <file-system-id> and <aws-region> with your values.
+ 4) You can also mount the EFS to your EC2 instance to do some testing using following command. This will mount EFS to directory ~/efs-mount-point in your Ec2 i       instance. Replace (file-system-id) and (aws-region) with your values.
     
         mkdir ~/efs-mount-point
     
-        sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport <file-system-id>.efs.<aws-region>.amazonaws.com:/  ~/efs-mount-point   
+        sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport file-system-id.efs.aws-region.amazonaws.com:/  ~/efs-mount-point   
     
         df -kh --> This should show your efs mounted to the directory
     
