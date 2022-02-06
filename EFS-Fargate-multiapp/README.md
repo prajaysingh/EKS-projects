@@ -24,14 +24,23 @@ For this to happen:
          
 
     b) Name: app2
+    
+    
        Root directory path: /app1
        POSIX user:
+       
          User id: 3000
+         
          Group id: 3000
+         
        Root directory creation permissions:
+       
          User id: 3000
+         
          Group id: 3000
+         
          Permissions: 0750
+         
    
    2) Apply the manifests that creates storage-class,pvc,pv,pod for 2 different applications. Replace filesystem id and access point id with your values in PersistentVolume section
         kubectl apply -f App1.yml
