@@ -5,14 +5,23 @@ For this to happen:
 1) You should create two access points in EFS pointing to two different paths and permissions. In my setup I have created 2 access points with following configuration
 
     a) Name: app1
+    
+    
        Root directory path: /app1
        POSIX user:
+       
         User id: 2000
+        
         Group id: 2000
+        
        Root directory creation permissions:
+       
          User id: 2000
+         
          Group id: 2000
+         
          Permissions: 0750
+         
 
     b) Name: app2
        Root directory path: /app1
