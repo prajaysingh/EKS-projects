@@ -1,8 +1,9 @@
-This demo is for using single EFS with EKS Fargate. In this setup two applications have their own separate directories with separate permissions in a single filesystem.
+This demo is for using single EFS with EKS Fargate. In this setup two applications have their own separate directories with separate permissions in a single EFS by making use of 2 access points.
 
 For this to happen:
 
 1) You should create two access points in EFS pointing to two different paths and permissions. In my setup I have created 2 access points with following configuration
+
     a) Name: app1
        Root directory path: /app1
        POSIX user:
