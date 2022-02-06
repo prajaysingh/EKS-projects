@@ -42,14 +42,14 @@ For this to happen:
          Permissions: 0750
          
    
-2) Apply the manifests that creates storage-class,pvc,pv,pod for 2 different applications. Replace filesystem id and access point id with your values in Persistent volume section.
+2) Apply the manifests that creates storage-class,pvc,pv,pod for 2 different applications. Replace {filesystem id} and {access point} id with your values in Persistent volume section.
    
         kubectl apply -f App1.yml
         
         kubectl apply -f App2.yml
         
         
- 3) For verification, you can exec to any pod and see the permission is matching or not using 
+ 3) For verification, you can exec to any of those 2 pods and see the permission is matching or not using 
   
         ls -la /data/
    
