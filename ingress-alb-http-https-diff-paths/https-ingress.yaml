@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: apple
+  name: myfirstingress-https
+  annotations:
+    alb.ingress.kubernetes.io/group.name: "mysharedingress"
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/certificate-arn: <certificate-arn>
+    alb.ingress.kubernetes.io/actions.redirect-to-path: >
+      {"type":"redirect","redirectConfig":{"host":"httpd.prajaysilwal.com","path":"/index.html","port":"443","protocol":"HTTPS","statusCode":"HTTP_302"}}
+spec:
+  rules:
+    - host: "httpd.prajaysilwal.com"
+      http:
+        paths:
+          - path: /index.html
+            backend:
+              serviceName: apple-service
+              servicePort: 5678
+          - path: /
+            backend:
+              serviceName: redirect-to-path
+              servicePort: use-annotation
+        
