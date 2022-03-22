@@ -1,0 +1,29 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: apple-app
+  namespace: apple
+  labels:
+    app: apple
+spec:
+  containers:
+    - name: apple-app
+      #image: hashicorp/http-echo
+      image: httpd
+      #args:
+       # - "-text=apple"
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: apple-service
+  namespace: apple
+spec:
+  type: NodePort
+  selector:
+    app: apple
+  ports:
+    - port: 5678 # This is the port of the service’s internal cluster IP
+      targetPort: 80 # This is the target port of the backing pods
