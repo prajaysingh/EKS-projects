@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: apple
+  name: myfirstingress
+  annotations:
+    alb.ingress.kubernetes.io/group.name: "mysharedingress"
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/actions.redirect-to-eks: >
+      {"type":"redirect","redirectConfig":{"host":"httpd.prajaysilwal.com","path":"/index.html","port":"443","protocol":"HTTPS","statusCode":"HTTP_302"}}
+spec:
+  rules:
+    - host: "httpd.prajaysilwal.com"
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: redirect-to-eks
+              servicePort: use-annotation
