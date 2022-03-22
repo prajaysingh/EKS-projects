@@ -2,7 +2,7 @@ This demo creates a ALB with following rules in place:
 
 1) HTTP:80 Listener:
 
-          Any request here on the host httpd.prajaysilwal.com and path (any) will be redirected to HTTPS:443 on host httpd.prajaysilwal.com and path index.html. Redirect to 2 a)
+       a) Any request here on the host httpd.prajaysilwal.com and path (any) will be redirected to HTTPS:443 on host httpd.prajaysilwal.com and path index.html. Redirect to 2 a)
           
           
 2) HTTPS:443 Listener:
