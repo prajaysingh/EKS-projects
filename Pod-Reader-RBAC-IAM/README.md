@@ -10,7 +10,7 @@ This demo creates a user which has only pod reader type access on EKS clusters.
 
 4. Test your setup
    
-   export AWS_PROFILE=test
+  export AWS_PROFILE=test
 
   aws sts get-caller-identity
 
