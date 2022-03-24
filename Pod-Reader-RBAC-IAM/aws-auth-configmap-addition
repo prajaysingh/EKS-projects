@@ -1,0 +1,5 @@
+ mapUsers: |
+    - userarn: arn:aws:iam::111122223333:user/test-user
+      username: test-user
+      groups:
+        - eks-console-dashboard-full-access-group
